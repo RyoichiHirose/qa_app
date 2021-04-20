@@ -1,0 +1,26 @@
+tables:
+  users:
+    id:integer
+    name:string,not_null
+    email:string,unique,not_null
+    created_at:datetime
+    updated_at:datetime
+    password_digest:string,not_null
+    admin:boolean,default:false
+
+  questions:
+    id:integer
+    title:string,not_null,limit:100
+    content:text,not_null,limit:400
+    created_at:datetime
+    updated_at:datetime
+    user_id:integer,foreign_key
+    solved:boolean,default:false
+  
+  answers:
+    id:integer
+    content:text,not_null
+    created_at:datetime
+    updated_at:datetime
+    user_id:integer,foreign_key
+    question_id:integer,foreign_key
