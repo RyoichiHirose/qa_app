@@ -1,0 +1,29 @@
+ユーザー登録画面を表示する  GET /users/new  users#new
+ユーザー登録をする  POST /users  users#create
+ユーザ一覧を表示する GET /users  users#index
+
+ログイン画面を表示する  GET /login  sessions#new
+ログインする  POST /login  sessions#create
+ログアウトする DELETE /sessions sessions#destroy
+
+<後回し>
+質問一覧を表示する(未解決) GET /tasks?solved=false
+質問一覧を表示する(解決済み)GET /tasks?solved=true
+
+resourses:question
+質問一覧を表示する(全て)  GET /questions  questions#index
+質問投稿ページを表示する GET /tasks/new  questions#new
+質問投稿をする POST /questions  questions#create
+質問詳細を表示する GET /questions/:id questions#show
+質問編集ページを表示する GET /questions/:id/edit
+質問を更新する PATCH /questions/:id  questions#updatae
+質問を削除する DELETE /questions/:id  questions#destroy
+
+回答フォーム GET /questions/:id/answers/new  answers#new
+回答を投稿 POST /questions/:id/answers   answers#create
+
+管理画面用のログインページを表示する /admin/login
+(管理画面)質問一覧ページを表示する /admin/questions  admin/questions#index
+(管理画面)質問を削除する /admin/questions/:id  admin/questions#destroy
+(管理画面)ユーザ一覧ページを表示 admin/users  admin/users#index
+(管理画面)ユーザを削除する  admin/users  admin/users#destroy
