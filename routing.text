@@ -6,11 +6,11 @@
 ログインする  POST /login  sessions#create
 ログアウトする DELETE /sessions sessions#destroy
 
-<後回し>
-質問一覧を表示する(未解決) GET /tasks?solved=false
-質問一覧を表示する(解決済み)GET /tasks?solved=true
+<疑問が残る>
+質問一覧を表示する(未解決) GET /tasks/unsolved
+質問一覧を表示する(解決済み)GET /tasks/solved
 
-resourses:question
+＜resourses:questionで作成＞
 質問一覧を表示する(全て)  GET /questions  questions#index
 質問投稿ページを表示する GET /tasks/new  questions#new
 質問投稿をする POST /questions  questions#create
